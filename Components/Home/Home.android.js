@@ -16,12 +16,12 @@ const Home = () => {
             <View style={styles.nav}>
                 {
                     buttons.map((text, i) => {
-                        return <Button btnStyle={styles.btnStyle} text={text} clicked={i == 0 ? colors[0] : 'transparent'} key={text+i}/>
+                        return <Button btnStyle={styles.btnStyle} text={text} clicked={i == 0 ? colors[2] : 'transparent'} key={text+i}/>
                     })
                 }
             </View>
-            <Timer color={colors[0]}/>
-            <Icon name='settings' size={40} color={"darkgray"}></Icon>
+            <Timer color={colors[2]}/>
+            <Icon name='settings' size={40} color={"darkgray"} onPress={() => alert("hello user")}></Icon>
         </View>
     )
 }
