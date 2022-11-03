@@ -8,14 +8,14 @@ export default StyleSheet.create({
         alignItems: "center",
         height: 300,
         width: 300,
-        borderRadius: 300 / 2
+        borderRadius: 600 / Math.PI
     },
     grantLayer: {
         justifyContent: "center",
         alignItems: "center",
         height: 300,
         width: 300,
-        borderRadius: 300 / 2
+        borderRadius: 600 / Math.PI
     },
     parentLayer: {
         justifyContent: "center",
@@ -23,7 +23,7 @@ export default StyleSheet.create({
         height: 260,
         width: 260,
         backgroundColor: "#11233d",
-        borderRadius: 260 / 2
+        borderRadius: 520 / Math.PI
     },
     childLayer: {
         position: "absolute",

@@ -24,7 +24,7 @@ const Timer = ({color}) => {
         }, 100);
     }
     return (
-        <TouchableOpacity style={[styles.upperLayer, press ? { elevation: 10 } : { elevation: 20 }]} onPress={clicked} activeOpacity={1}>
+        <TouchableOpacity style={[styles.upperLayer, press ? { elevation: 10 } : { elevation: 20 }]} onPress={clicked} activeOpacity={.8}>
             <LinearGradient colors={["#11233d", "#546b8f"]} start={{ x: .5, y: .5 }} end={{ x: 1, y: 1 }} style={styles.grantLayer}>
                 <View style={styles.parentLayer}>
                     <Svg>
