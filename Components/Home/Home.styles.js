@@ -36,6 +36,14 @@ export default StyleSheet.create({
       letterSpacing: .4
     },
   },
+  upperLayer: {
+    shadowColor: '#999',
+    justifyContent: "center",
+    alignItems: "center",
+    height: 300,
+    width: 300,
+    borderRadius: 300 / 2
+  },
   grantLayer: {
     justifyContent: "center",
     alignItems: "center",
