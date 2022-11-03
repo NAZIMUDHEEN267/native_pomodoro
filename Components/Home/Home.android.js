@@ -3,6 +3,8 @@ import { useState } from 'react';
 import styles from "./Home.styles";
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import Svg, { Circle } from "react-native-svg";
+// import {  } from "react-native-reanimated";
 
 const Home = () => {
 
@@ -13,10 +15,10 @@ const Home = () => {
     const SECOND = 1e2.toString().slice(1);
     const MINUTE = 1e2.toString().slice(1);
 
-    function clicked () {
+    function clicked() {
         setPress(true);
         setTimeout(() => {
-            if(press.tapNum === 2) {
+            if (press.tapNum === 2) {
                 setPress({ click: false, switchText: "start", tapNum: press.tapNum - 1 });
             } else {
                 setPress({ click: false, switchText: "pause", tapNum: press.tapNum + 1 });
@@ -29,11 +31,14 @@ const Home = () => {
             <Text style={styles.headline}>pomodoro</Text>
             <View style={styles.nav}>
             </View>
-            <TouchableOpacity style={[styles.upperLayer, press ? {elevation: 10} : {elevation: 20}]} onPress={clicked} activeOpacity={1}>
+            <TouchableOpacity style={[styles.upperLayer, press ? { elevation: 10 } : { elevation: 20 }]} onPress={clicked} activeOpacity={1}>
                 <LinearGradient colors={["#11233d", "#546b8f"]} start={{ x: .5, y: .5 }} end={{ x: 1, y: 1 }} style={styles.grantLayer}>
                     <View style={styles.parentLayer}>
-                        <View style={[styles.childLayer, { borderColor: "yellow" }]}>
-                            <Text style={styles.time}>{MINUTE}:{SECOND}</Text>
+                        <Svg>
+                            <Circle cx={130} cy={130} r={350 / Math.PI } stroke={colors[0]} strokeWidth={10} />
+                        </Svg>
+                        <View style={styles.childLayer}>
+                            <Text style={styles.time}>00:00</Text>
                             <Text style={styles.switchText}>{press.switchText}</Text>
                         </View>
                     </View>

@@ -60,12 +60,9 @@ export default StyleSheet.create({
     borderRadius: 260 / 2
   },
   childLayer: {
-    height: 220,
-    width: 220,
+    position: "absolute",
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 8,
-    borderRadius: 110
   },
   time: {
     color: "#c7cbd1",
