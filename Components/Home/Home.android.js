@@ -1,49 +1,21 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { useState } from 'react';
 import styles from "./Home.styles";
-import { LinearGradient } from 'expo-linear-gradient';
 import Icon from "react-native-vector-icons/MaterialIcons";
-import Svg, { Circle } from "react-native-svg";
+import Timer from '../Timer/Timer';
 // import {  } from "react-native-reanimated";
 
 const Home = () => {
 
     const colors = ["#dd8b76", "#76ddce", "#ab87e7"];
     const buttons = ["pomodoro", "short break", "long break"];
-    const [press, setPress] = useState({ click: false, switchText: "start", tapNum: 0 });
-    const [seconds, setSeconds] = useState(parseInt('00', 8));
-    const SECOND = 1e2.toString().slice(1);
-    const MINUTE = 1e2.toString().slice(1);
-
-    function clicked() {
-        setPress(true);
-        setTimeout(() => {
-            if (press.tapNum === 2) {
-                setPress({ click: false, switchText: "start", tapNum: press.tapNum - 1 });
-            } else {
-                setPress({ click: false, switchText: "pause", tapNum: press.tapNum + 1 });
-            }
-        }, 100);
-    }
 
     return (
         <View style={styles.container}>
             <Text style={styles.headline}>pomodoro</Text>
             <View style={styles.nav}>
             </View>
-            <TouchableOpacity style={[styles.upperLayer, press ? { elevation: 10 } : { elevation: 20 }]} onPress={clicked} activeOpacity={1}>
-                <LinearGradient colors={["#11233d", "#546b8f"]} start={{ x: .5, y: .5 }} end={{ x: 1, y: 1 }} style={styles.grantLayer}>
-                    <View style={styles.parentLayer}>
-                        <Svg>
-                            <Circle cx={130} cy={130} r={350 / Math.PI } stroke={colors[0]} strokeWidth={10} />
-                        </Svg>
-                        <View style={styles.childLayer}>
-                            <Text style={styles.time}>00:00</Text>
-                            <Text style={styles.switchText}>{press.switchText}</Text>
-                        </View>
-                    </View>
-                </LinearGradient>
-            </TouchableOpacity>
+            <Timer color={colors[0]}/>
             <Icon name='settings' size={40} color={"darkgray"}></Icon>
         </View>
     )
